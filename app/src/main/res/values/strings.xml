@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">escudos</string>
+    <string-array name="equipos_array">
+        <item>Real Madrid</item>
+        <item>Barça</item>
+        <item>Atlético de Madrid</item>
+        <item>Manchester City</item>
+    </string-array>
+</resources>

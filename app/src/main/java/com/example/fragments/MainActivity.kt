@@ -19,14 +19,11 @@ class MainActivity : AppCompatActivity() {
 //            fragmentTransaction.add(R.id.fragment_container, fragment)
 //            fragmentTransaction.commit()
 
-            // Comenzamos una transacción de fragmentos con el administrador de fragmentos (FragmentManager).
-            supportFragmentManager.beginTransaction()
-                // Añadimos una instancia de EjemploFragment al contenedor de fragmentos.
-                // 'R.id.fragment_container' es el ID del FrameLayout en el layout 'activity_main.xml' donde queremos colocar el fragmento.
-                // EjemploFragment() crea una nueva instancia de nuestro fragmento personalizado.
-                .add(R.id.fragment_container, Fragment_Ejercicio())
-                // Confirmamos la transacción. Esto efectivamente agrega el fragmento a la interfaz de usuario.
-                .commit()
+            if (supportFragmentManager.findFragmentById(R.id.fragment_container) == null) {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, Fragment_Ejercicio())
+                    .commit()
+            }
         }
     }
 }
